@@ -1,0 +1,23 @@
+# Datos persistentes del sandbox
+persistent_data/
+
+# Scripts de usuario temporales
+user_scripts/*.tmp
+user_scripts/*.log
+
+# Archivos de Docker
+.docker/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log

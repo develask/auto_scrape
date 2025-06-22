@@ -1,0 +1,17 @@
+# Dependencias para el sandbox con Playwright
+playwright==1.41.0
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+selenium==4.15.2
+pandas==2.1.3
+numpy==1.25.2
+aiohttp==3.9.1
+asyncio-throttle==1.0.2
+fake-useragent==1.4.0
+python-dotenv==1.0.0
+Pillow==10.1.0
+matplotlib==3.8.2
+seaborn==0.13.0
+jupyter==1.0.0
+ipython==8.17.2
