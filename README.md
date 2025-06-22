@@ -7,23 +7,33 @@ Auto Scrape es un proyecto en Python diseñado para automatizar la extracción d
 - Configuración basada en archivos de configuración o código Python.
 - Soporte para paginación y manejo de errores.
 - Exportación de datos a JSON o CSV.
+- Generación de scripts de scraping para uso personalizado.
 
 ## Ejemplo de uso
 ```python
-from auto_scrape import Scraper
+from auto_scrape import ScriptGenerator
 
-# Crear un scraper para extraer títulos de artículos
 config = {
-    'start_urls': ['https://example.com/blog'],
-    'selectors': {
-        'title': 'h2.post-title',
-        'date': 'span.post-date'
+    'start_urls': ['https://example.com/'],
+    'description': """
+Extract the information from each competition.
+The output format must follow the following scheme:
+[
+    {
+        'name': 'Cometition name',
+        'date': 'race date',
+        'results': [
+            {'name': 'Name', 'position': Number, 'time': '00:01:30'},
+            {'name': 'Name 2', 'position': Number, 'time': '00:01:30'},
+        ]
     }
+]
+"""
 }
-scraper = Scraper(config)
-results = scraper.run()
+generator = ScriptGenerator(config)
+script_path = generator.generate('scrape_blog.py')
+print(f"Script generado en {script_path}")
 
-# Guardar resultados en un archivo JSON
-scraper.save(results, 'output.json')
-print(f"Se han extraído {len(results)} artículos y guardado en output.json")
+# Ejecutar el script para extraer datos y guardarlos en JSON
+# python scrape_blog.py --output output.json
 ```
